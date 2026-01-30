@@ -29,9 +29,20 @@ export const WhoWeAre: React.FC = () => {
     <div className="bg-white font-sans text-slate-900 pt-20">
       
       {/* HERO SECTION */}
-      <section className="relative py-24 bg-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2"></div>
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-slate-900 text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://raw.githubusercontent.com/seansim-kor/public/main/holdings/about-hero.png" 
+            alt="Marencore Leadership" 
+            className="w-full h-full object-cover opacity-60 animate-zoom-in"
+          />
+          <div className="absolute inset-0 bg-slate-900/70 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900/50"></div>
+        </div>
+        
+        {/* Decorative Blur */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 z-0"></div>
         
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in-down">
