@@ -212,7 +212,7 @@ export const WhoWeAre: React.FC = () => {
                             <ul className="space-y-2 text-sm text-slate-600">
                                 <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-primary mt-0.5"/> Agri-Tech Transfer & Implementation</li>
                                 <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-primary mt-0.5"/> Korea-SEA Business Development</li>
-                                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-primary mt-0.5"/> Future Energy Projects (Hydrogen/Ammonia)</li>
+                                <li className="flex items-center gap-2"><CheckCircle2 size={16} className="text-primary mt-0.5"/> Future Energy Projects (Renewable Energy/ESS)</li>
                             </ul>
                         </div>
                     </div>
