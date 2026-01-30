@@ -17,7 +17,7 @@ export const AboutSection: React.FC = () => {
       `}</style>
       {/* Background Typography - Massive Watermark */}
       <div className="absolute top-10 left-0 w-full overflow-hidden select-none pointer-events-none opacity-[0.03]">
-        <div className="text-[12rem] md:text-[20rem] font-serif font-bold text-slate-900 leading-none whitespace-nowrap text-center">
+        <div className="text-6xl sm:text-8xl md:text-[20rem] font-serif font-bold text-slate-900 leading-none whitespace-nowrap text-center">
           MARENCORE
         </div>
       </div>
@@ -29,8 +29,9 @@ export const AboutSection: React.FC = () => {
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-50 text-primary mb-8 shadow-sm animate-float">
                 <Anchor size={36} />
             </div>
-            <h2 className="text-4xl md:text-7xl font-serif font-bold text-slate-900 mb-6">
-              <span className="text-primary">Mare</span> (Sea) <span className="text-slate-300 mx-2 font-light">+</span> <span className="text-accent">Core</span> (Essence)
+            {/* Optimized for mobile no-wrap */}
+            <h2 className="text-2xl sm:text-4xl md:text-7xl font-serif font-bold text-slate-900 mb-6 whitespace-nowrap overflow-x-visible">
+              <span className="text-primary">Mare</span> (Sea) <span className="text-slate-300 mx-1 md:mx-2 font-light">+</span> <span className="text-accent">Core</span> (Essence)
             </h2>
             <p className="text-xl md:text-3xl text-slate-400 font-serif italic mb-10">
               "Orchestrating the Green Value Chain."
@@ -150,87 +151,79 @@ export const AboutSection: React.FC = () => {
             </svg>
 
             {/* --- HTML MARKERS --- */}
-            {/* 
-                Updated Positions:
-                KR: 82%, 36%
-                MY: 76%, 48% (Moved up from 58%)
-                SG: 81.5%, 49% (Moved up from 64%, right from 76.5%)
-            */}
-
             {/* Hub: Korea */}
             <div className="absolute top-[36%] left-[82%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
-                <div className="w-20 h-20 bg-primary/5 rounded-full animate-ping absolute"></div>
-                {/* Adjusted transparency to bg-white/40 (60% transparent) with backdrop blur */}
-                <div className="w-14 h-14 bg-white/40 backdrop-blur-md rounded-full shadow-xl border-2 border-primary flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
-                    <TrendingUp size={24} className="text-primary"/>
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-primary/5 rounded-full animate-ping absolute"></div>
+                {/* Scaled down for mobile (w-8 h-8), up for desktop (md:w-14) */}
+                <div className="w-8 h-8 md:w-14 md:h-14 bg-white/40 backdrop-blur-md rounded-full shadow-xl border-2 border-primary flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
+                    {/* Responsive Icon Size */}
+                    <TrendingUp size={16} className="text-primary md:w-6 md:h-6"/>
                 </div>
-                {/* Changed Position to Right */}
-                <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur px-4 py-2 rounded-lg shadow-md border border-slate-100 text-left min-w-[140px]">
-                    <span className="block font-bold text-slate-900 text-sm">Korea Hub</span>
-                    <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Strategy & R&D</span>
-                    <div className="flex gap-1 justify-start mt-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
+                {/* Scaled down label box for mobile */}
+                <div className="absolute left-full ml-2 md:ml-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur px-2 py-1 md:px-4 md:py-2 rounded-lg shadow-md border border-slate-100 text-left min-w-[80px] md:min-w-[140px]">
+                    <span className="block font-bold text-slate-900 text-[9px] md:text-sm leading-tight">Korea Hub</span>
+                    <span className="text-[7px] md:text-[10px] text-slate-500 uppercase font-bold tracking-wider hidden sm:block">Strategy & R&D</span>
+                    <div className="flex gap-1 justify-start mt-0.5 md:mt-1">
+                        <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-green-500"></span>
+                        <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-orange-400"></span>
                     </div>
                 </div>
             </div>
 
-            {/* Hub: Malaysia (Moved North 10%) */}
+            {/* Hub: Malaysia */}
             <div className="absolute top-[48%] left-[76%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
-                <div className="w-20 h-20 bg-accent/5 rounded-full animate-ping absolute delay-300"></div>
-                {/* Adjusted transparency to bg-white/40 (60% transparent) with backdrop blur */}
-                <div className="w-14 h-14 bg-white/40 backdrop-blur-md rounded-full shadow-xl border-2 border-accent flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
-                    <Zap size={24} className="text-accent"/>
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-accent/5 rounded-full animate-ping absolute delay-300"></div>
+                <div className="w-8 h-8 md:w-14 md:h-14 bg-white/40 backdrop-blur-md rounded-full shadow-xl border-2 border-accent flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
+                    <Zap size={16} className="text-accent md:w-6 md:h-6"/>
                 </div>
-                <div className="absolute right-full mr-4 top-0 bg-white/80 backdrop-blur px-4 py-2 rounded-lg shadow-md border border-slate-100 text-right min-w-[140px]">
-                    <span className="block font-bold text-slate-900 text-sm">Malaysia Hub</span>
-                    <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Sourcing & Prod.</span>
-                     <div className="flex gap-1 justify-end mt-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
+                <div className="absolute right-full mr-2 md:mr-4 top-0 bg-white/80 backdrop-blur px-2 py-1 md:px-4 md:py-2 rounded-lg shadow-md border border-slate-100 text-right min-w-[80px] md:min-w-[140px]">
+                    <span className="block font-bold text-slate-900 text-[9px] md:text-sm leading-tight">Malaysia Hub</span>
+                    <span className="text-[7px] md:text-[10px] text-slate-500 uppercase font-bold tracking-wider hidden sm:block">Sourcing & Prod.</span>
+                     <div className="flex gap-1 justify-end mt-0.5 md:mt-1">
+                        <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-green-500"></span>
+                        <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-orange-400"></span>
                     </div>
                 </div>
             </div>
 
-             {/* Hub: Singapore (HQ) (Moved North 15%, East 5%) */}
-             <div className="absolute top-[49%] left-[81.5%] -translate-x-1/2 translate-y-4 flex flex-col items-center group cursor-pointer z-20">
-                <div className="w-16 h-16 bg-blue-500/10 rounded-full animate-ping absolute delay-500"></div>
-                {/* Adjusted transparency to bg-slate-900/40 (60% transparent) with backdrop blur */}
-                <div className="w-12 h-12 bg-slate-900/40 backdrop-blur-md rounded-full shadow-2xl border-2 border-blue-500 flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
-                    <Building2 size={20} className="text-blue-400"/>
+             {/* Hub: Singapore (HQ) */}
+             <div className="absolute top-[49%] left-[81.5%] -translate-x-1/2 translate-y-3 md:translate-y-4 flex flex-col items-center group cursor-pointer z-20">
+                <div className="w-10 h-10 md:w-16 md:h-16 bg-blue-500/10 rounded-full animate-ping absolute delay-500"></div>
+                <div className="w-8 h-8 md:w-12 md:h-12 bg-slate-900/40 backdrop-blur-md rounded-full shadow-2xl border-2 border-blue-500 flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
+                    <Building2 size={14} className="text-blue-400 md:w-5 md:h-5"/>
                 </div>
-                <div className="mt-2 bg-slate-900/80 backdrop-blur px-3 py-1.5 rounded shadow-lg border border-slate-700 text-center">
-                    <span className="block font-bold text-white text-xs">Singapore HQ</span>
-                    <span className="text-[9px] text-blue-200 uppercase tracking-wider">Control Tower</span>
+                <div className="mt-1 md:mt-2 bg-slate-900/80 backdrop-blur px-2 py-1 md:px-3 md:py-1.5 rounded shadow-lg border border-slate-700 text-center">
+                    <span className="block font-bold text-white text-[8px] md:text-xs leading-none">Singapore HQ</span>
+                    <span className="text-[7px] md:text-[9px] text-blue-200 uppercase tracking-wider hidden sm:inline">Control Tower</span>
                 </div>
             </div>
 
             {/* Market: EU */}
             <div className="absolute top-[23%] left-[49%] -translate-x-1/2 -translate-y-1/2 group">
-                <div className="flex items-center gap-2 bg-white/70 backdrop-blur px-3 py-1 rounded-full border border-orange-200 shadow-sm opacity-90 group-hover:opacity-100 transition-opacity">
-                    <Globe size={14} className="text-orange-500" />
-                    <span className="text-xs font-bold text-slate-700">EU Market</span>
+                <div className="flex items-center gap-1 md:gap-2 bg-white/70 backdrop-blur px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-orange-200 shadow-sm opacity-90 group-hover:opacity-100 transition-opacity">
+                    <Globe size={10} className="text-orange-500 md:w-3.5 md:h-3.5" />
+                    <span className="text-[8px] md:text-xs font-bold text-slate-700">EU Market</span>
                 </div>
             </div>
 
              {/* Market: NA */}
              <div className="absolute top-[28%] left-[22%] -translate-x-1/2 -translate-y-1/2 group">
-                <div className="flex items-center gap-2 bg-white/70 backdrop-blur px-3 py-1 rounded-full border border-orange-200 shadow-sm opacity-90 group-hover:opacity-100 transition-opacity">
-                    <Ship size={14} className="text-orange-500" />
-                    <span className="text-xs font-bold text-slate-700">North America</span>
+                <div className="flex items-center gap-1 md:gap-2 bg-white/70 backdrop-blur px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-orange-200 shadow-sm opacity-90 group-hover:opacity-100 transition-opacity">
+                    <Ship size={10} className="text-orange-500 md:w-3.5 md:h-3.5" />
+                    <span className="text-[8px] md:text-xs font-bold text-slate-700">North America</span>
                 </div>
             </div>
 
             {/* Market: SA */}
              <div className="absolute top-[70%] left-[29%] -translate-x-1/2 -translate-y-1/2 group">
-                <div className="flex items-center gap-2 bg-white/70 backdrop-blur px-3 py-1 rounded-full border border-orange-200 shadow-sm opacity-90 group-hover:opacity-100 transition-opacity">
-                    <Globe size={14} className="text-orange-500" />
-                    <span className="text-xs font-bold text-slate-700">South America</span>
+                <div className="flex items-center gap-1 md:gap-2 bg-white/70 backdrop-blur px-2 py-0.5 md:px-3 md:py-1 rounded-full border border-orange-200 shadow-sm opacity-90 group-hover:opacity-100 transition-opacity">
+                    <Globe size={10} className="text-orange-500 md:w-3.5 md:h-3.5" />
+                    <span className="text-[8px] md:text-xs font-bold text-slate-700">South America</span>
                 </div>
             </div>
 
 
-            {/* Legend */}
+            {/* Legend - Hidden on small mobile to clear view */}
             <div className="absolute bottom-6 left-6 max-w-xs bg-white/80 backdrop-blur-md p-5 rounded-2xl border border-slate-200 shadow-xl hidden md:block">
                 <h4 className="font-bold text-slate-900 mb-3 flex items-center gap-2 text-sm"><Globe size={16} className="text-primary"/> Global Network Flow</h4>
                 <div className="space-y-2">

@@ -7,12 +7,19 @@ export const WhoWeAre: React.FC = () => {
   const { hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // Initial scroll to top is fine, but we want to let the hash scroll handle the position if present
+    if (!hash) {
+        window.scrollTo(0, 0);
+    }
+    
     if (hash) {
+      // Slightly increased delay to ensure layout stability (images loading etc)
       setTimeout(() => {
         const element = document.getElementById(hash.replace('#', ''));
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Changed to 'start' to avoid cutting off top of tall elements on mobile
+          // CSS scroll-margin-top will handle the header offset
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 500);
     }
@@ -69,8 +76,8 @@ export const WhoWeAre: React.FC = () => {
         <div className="container mx-auto px-6 space-y-24">
             
             {/* PROFILE 1: HB Kwon (Now Strategic Architect) */}
-            <div id="mr.-hb-kwon" className="flex flex-col lg:flex-row gap-12 items-center reveal">
-                <div className="lg:w-1/3 relative group">
+            <div id="mr.-hb-kwon" className="flex flex-col lg:flex-row gap-12 items-center reveal scroll-mt-28">
+                <div className="w-full max-w-md lg:max-w-none lg:w-1/3 relative group">
                     <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-200 relative">
                         <div className="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600">
                              <img src="https://raw.githubusercontent.com/seansim-kor/public/main/holdings/HBKWON.png" alt="HB Kwon" className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"/>
@@ -116,8 +123,8 @@ export const WhoWeAre: React.FC = () => {
             <div className="w-full h-px bg-slate-200"></div>
 
             {/* PROFILE 2: Winston Jeong (Now Operations Commander) */}
-            <div id="mr.-winston-jeong" className="flex flex-col lg:flex-row-reverse gap-12 items-center reveal">
-                <div className="lg:w-1/3 relative group">
+            <div id="mr.-winston-jeong" className="flex flex-col lg:flex-row-reverse gap-12 items-center reveal scroll-mt-28">
+                <div className="w-full max-w-md lg:max-w-none lg:w-1/3 relative group">
                     <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-200 relative">
                         {/* Placeholder for Photo */}
                         <div className="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600">
@@ -164,8 +171,8 @@ export const WhoWeAre: React.FC = () => {
             <div className="w-full h-px bg-slate-200"></div>
 
             {/* PROFILE 3: Sean Sim (Now Technology Bridge) */}
-            <div id="mr.-sean-sim" className="flex flex-col lg:flex-row gap-12 items-center reveal">
-                <div className="lg:w-1/3 relative group">
+            <div id="mr.-sean-sim" className="flex flex-col lg:flex-row gap-12 items-center reveal scroll-mt-28">
+                <div className="w-full max-w-md lg:max-w-none lg:w-1/3 relative group">
                     <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl bg-slate-200 relative">
                         <div className="absolute inset-0 bg-slate-800 flex items-center justify-center text-slate-600">
                              <img src="https://raw.githubusercontent.com/seansim-kor/public/main/holdings/SeanSim.png" alt="Sean Sim" className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"/>
@@ -227,7 +234,7 @@ export const WhoWeAre: React.FC = () => {
          </div>
       </section>
 
-      {/* Embedded Contact Section Reuse (Modified for context via props could be an option, but default is fine) */}
+      {/* Embedded Contact Section Reuse */}
       <ContactSection />
 
     </div>

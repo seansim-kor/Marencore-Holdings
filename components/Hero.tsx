@@ -3,7 +3,7 @@ import { Sprout, Globe, Scale } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative h-screen min-h-[700px] w-full flex items-center justify-center overflow-hidden text-white">
+    <section className="relative h-screen min-h-[500px] md:min-h-[700px] w-full flex items-center justify-center overflow-hidden text-white">
       {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
         <video 

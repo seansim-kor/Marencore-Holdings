@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
 import { Home } from './pages/Home';
 import { WhoWeAre } from './pages/WhoWeAre';
 import { Logistics } from './pages/Logistics';
@@ -68,6 +69,7 @@ function App() {
 
         {/* Persistent CTA */}
         <FloatingWhatsApp />
+        <ScrollToTopButton />
       </div>
     </HashRouter>
   );

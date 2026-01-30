@@ -32,11 +32,11 @@ export const ConsultingPage: React.FC = () => {
           <img 
             src="https://raw.githubusercontent.com/seansim-kor/public/main/holdings/ESG%20report.png" 
             alt="ESG Strategy Report" 
-            className="w-full h-full object-cover opacity-30 animate-zoom-in"
+            className="w-full h-full object-cover opacity-60 animate-zoom-in"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/50 to-slate-900/10"></div>
           {/* Data Grid Overlay Effect */}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
