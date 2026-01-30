@@ -16,9 +16,9 @@ export const BioenergyFeedstock: React.FC = () => {
           <img 
             src="https://raw.githubusercontent.com/seansim-kor/public/main/holdings/palm-trees.png" 
             alt="Bioenergy Feedstock Source" 
-            className="w-full h-full object-contain opacity-40"
+            className="w-full h-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-900/40 to-transparent"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
